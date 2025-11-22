@@ -1,0 +1,34 @@
+<!-- Velvet Plate – Leaf/Flower Ornament -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360">
+  <!-- Tweak stroke-opacity (0.06–0.14) to taste -->
+  <g fill="none" stroke="#0f172a" stroke-opacity=".08" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- main sprig curve -->
+    <path d="M40 300c120-90 210-150 310-170 40-8 86-8 130 6"/>
+
+    <!-- leaf cluster 1 -->
+    <path d="M132 252c-10-28 4-60 30-76 6-4 12-6 18-7-2 7-3 13-2 19 3 18 14 30 28 36-15 4-30 5-44 13-12 7-23 10-30 15z"/>
+    <path d="M161 220c7-10 17-18 29-23"/>
+    <path d="M154 236c10-6 22-10 34-12"/>
+
+    <!-- leaf cluster 2 -->
+    <path d="M220 210c-6-22 9-47 33-59 7-3 14-5 20-5-3 6-4 12-4 18 1 15 9 26 22 33-13 3-26 4-38 10-10 5-20 8-33 3z"/>
+    <path d="M246 188c8-9 19-16 31-20"/>
+    <path d="M238 202c11-5 23-7 35-8"/>
+
+    <!-- leaf cluster 3 (towards tip) -->
+    <path d="M312 176c-5-18 10-39 33-49 8-3 15-4 22-4-3 6-5 11-5 16 1 13 8 22 20 28-12 2-24 3-36 8-11 4-22 7-34 1z"/>
+    <path d="M338 158c9-8 20-14 32-17"/>
+    <path d="M330 170c11-4 23-5 35-6"/>
+
+    <!-- small accent leaves on stem -->
+    <path d="M112 284c13-7 23-16 30-28"/>
+    <path d="M184 246c12-6 21-14 28-24"/>
+    <path d="M268 210c12-6 21-13 28-22"/>
+    <path d="M352 182c11-5 20-12 26-20"/>
+
+    <!-- right-side decorative leaves (like the mockup) -->
+    <path d="M432 112c22-8 52 6 66 24-16 5-28 5-38 11-12 6-20 15-28 26-9-18-9-38 0-61z"/>
+    <path d="M414 156c20-10 39-14 62-12"/>
+    <path d="M456 212c26-6 46-26 52-44-18-2-32 1-44 7-13 7-22 16-32 27 7 7 14 10 24 10z"/>
+  </g>
+</svg>
