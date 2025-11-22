@@ -27,7 +27,6 @@ import { useAuthStore } from "./store/auth";
 import Reservations from "./pages/Reservations";
 import RouteChangeLoader from "./components/RouteChangeLoader";
 
-
 /* ---------- Shell: wraps all public pages with navbar/footer ---------- */
 function Shell() {
   const { pathname } = useLocation();
@@ -59,43 +58,40 @@ function ProtectedRoute({ children }) {
 export default function App() {
   return (
     <Routes>
-      {/* All public pages render inside the Shell */}
-      <Route element={<Shell />}>
+      {/* All main app pages now require auth */}
+      <Route
+        element={
+          <ProtectedRoute>
+            <Shell />
+          </ProtectedRoute>
+        }
+      >
         {/* Home (index) */}
         <Route index element={<Home />} />
 
-        {/* Public pages */}
+        {/* Public-facing app pages (but now behind auth) */}
         <Route path="/menu" element={<Menu />} />
         <Route path="/events" element={<Events />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        
 
         {/* Cart / Checkout flow */}
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/payment" element={<Payment />} />           {/* ✅ added */}
-        <Route path="/order/success" element={<OrderSuccess />} />{/* ✅ added */}
-        
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/order/success" element={<OrderSuccess />} />
 
-        {/* Example protected page (swap with your real component later) */}
-        <Route
-          path="/reservations"
-          element={
-           <Reservations/>
-          }
-        />
+        {/* Reservations (also behind auth automatically) */}
+        <Route path="/reservations" element={<Reservations />} />
       </Route>
 
-      {/* Auth pages (no navbar/footer) */}
+      {/* Auth pages (no navbar/footer, public) */}
       <Route path="/auth/login" element={<Login />} />
       <Route path="/auth/register" element={<Register />} />
       <Route path="/auth/forgot" element={<Forgot />} />
 
-      {/* Fallback -> Home */}
+      {/* Fallback -> Home (will redirect to login if not authed) */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
-
-
