@@ -1,4 +1,9 @@
+import dns from "dns";
 import "dotenv/config";
+// ...
+
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
+
 requireEnv("MONGO_URI");
 requireEnv("JWT_SECRET");
 requireEnv("CLIENT_URL");
@@ -17,6 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api/payments", payments);
 app.get("/health", (_, res) => res.json({ ok: true }));
+
 
 app.use("/api/auth", authRoutes);
 
